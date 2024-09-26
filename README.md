@@ -1,4 +1,4 @@
-# 🐟 Fish-Focused Chatbot
+# ![fish-logo](https://github.com/user-attachments/assets/92a0a0b2-2f7e-4d31-8823-9ddefc2bf2de) Fish-Focused Chatbot ![fish-logo](https://github.com/user-attachments/assets/92a0a0b2-2f7e-4d31-8823-9ddefc2bf2de) 
 
 ## Overview
 
