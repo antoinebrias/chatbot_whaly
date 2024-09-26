@@ -36,7 +36,7 @@ To set up this project locally, follow these steps:
 
 ## Usage
 
-Once the chatbot is running, you can interact with it by typing questions related to fish species. The chatbot will respond with information, keywords, and follow-up questions. You can also view distribution maps or time series related to the fish species you inquire about. 
+Once the chatbot is running, you can interact with it by typing questions related to fish species. The chatbot will respond with information, keywords, and follow-up questions. You can also view distribution maps related to the fish species you inquire about. 
 
 ## Example Interaction
 
