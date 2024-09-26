@@ -1,0 +1,380 @@
+:root {
+    --border-rad-lg: 15px;
+    --medium-light-text: #80b1d3; /* Soft ocean blue */
+    --light-text: #f0f9ff; /* Very light blue, like ocean foam */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;  
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Main container (flex layout for both chatbot and map) */
+main {
+    background-color: #005377; /* Deep ocean blue */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wrapper for chatbot and map */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Add space between chatbot and map */
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width for the layout */
+    height: 80vh; /* Set height of the main container */
+    padding: 0 40px; /* Add padding on both sides of the main wrapper */
+}
+
+/* Chatbot container */
+.chatbot-container {
+    background-color: #003a56; /* Darker ocean blue */
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: var(--border-rad-lg);
+    height: 100%;
+    padding-left: 20px; /* Padding on the left for chatbot */
+}
+
+
+
+
+/* Container to hold both the map and the density URL */
+.map-density-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    width: 50%; /* Set a fixed width for the container */
+    max-width: 1200px; /* Set a max-width for consistency */
+    padding: 1em;
+    margin: 0 auto; /* Center the container within its parent */
+}
+
+/* Map container */
+.map-container {
+    background-color: #e0f7fa; /* Optional background color for the map */
+    border-radius: var(--border-rad-lg);
+    width: 100%; /* Set the map width to 100% of the container */
+    height: 400px; /* Set a fixed height for the map */
+    margin-bottom: 20px; /* Space between the map and the density URL */
+    padding: 10px;
+}
+
+/* Density URL container */
+#density-url {
+    padding: 15px; /* Added padding for better spacing */
+    background-color: rgba(0, 105, 148, 0.9); /* Deep ocean blue with transparency */
+    color: var(--light-text); /* Light blue text */
+    border: 2px solid var(--medium-light-text); /* Soft ocean blue border */
+    border-radius: var(--border-rad-lg); /* Use the same border radius */
+    width: 100%; /* Full width of the parent container */
+    text-align: center; /* Center-align the content */
+    font-family: 'Grass', sans-serif; /* Grass font for the URL */
+    font-size: 14px; /* Font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Initially hide the map container */
+#map {
+    display: none; /* Start hidden */
+    width: 100%; /* Map will take the full width of the .map-container */
+    height: 100%; /* Map will take the full height of the .map-container */
+}
+
+
+.chatbot-container > * {
+    padding: .5em;   
+}
+
+.chatbot-header {
+    display: grid;
+    grid-template-areas: 'logo . .' 
+                        'logo title supportId'
+                        'logo subtitle .';
+}
+
+.chatbot-header > * {
+    margin: .11em;
+}
+
+.logo {
+    grid-area: logo;
+    width: 100px;
+margin: 0.5em 0;
+}
+
+.supportId {
+    font-size: 10px;
+    grid-area: supportId;
+    text-align: right;
+}
+
+.chatbot-conversation-container {
+    max-height: 450px;
+    min-height: 250px;
+    overflow-y: scroll;
+    margin: 0.5em 0;
+    background-color: #e0f7fa; /* Light turquoise, resembling shallow water */
+    border-radius: var(--border-rad-lg);
+    height: 70%;
+}
+
+/* stop ugly scroll bar on some browsers */
+.chatbot-conversation-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chatbot-conversation-container::-moz-scrollbar {
+    display: none;
+}
+
+.speech {
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 260px; 
+    color: var(--light-text);
+    min-width: 100%;
+    border-radius: var(--border-rad-lg); 
+}
+
+.speech:first-child {
+    margin-top: 0;
+}
+
+.speech-ai {
+    background: #004c70; /* Dark ocean blue for AI */
+    border-top-left-radius: 0; 
+}
+
+.speech-human {
+    background: #38bda8; /* Sea green for human */
+    border-top-right-radius: 0; 
+}
+
+.chatbot-input-container {
+    display: flex;
+    font-size: 14px; /* Font size */
+}
+
+input[type="text"], button {
+    background-color: transparent;
+    border: 1px solid var(--medium-light-text);
+    border-radius: 15px;
+    padding: 1em;
+}
+
+input[type="text"] {
+    color: #fcfcfc;
+    width: 100%;
+    border-right: 0; 
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 14px; /* Font size */
+}
+
+button {
+    border-left: 0; 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.send-btn-icon {
+    width: 20px;
+    display: block;
+}
+
+/* text */
+
+h1 {
+    font-size: 15px;
+    color: var(--light-text);
+    grid-area: title;
+    font-size: 3em; /* Adjust size as needed */
+    text-align: center; /* Center the title */
+    margin: 20px 0; /* Add some margin above and below */
+}
+
+
+h2, p {
+    color: var(--medium-light-text); 
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 700;
+    grid-area: subtitle;
+    text-transform: uppercase;
+}
+
+/* The cursor */
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinking-cursor::after {
+    content: "|";
+    font-weight: 700;
+    display: inline-block;
+    animation: cursor-blink .5s steps(2) infinite;
+}
+
+.suggestions-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0; /* Adjusted vertical space outside the buttons */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+
+.suggestion-btn {
+    display: inline-block;
+    height: 50px; /* Set a fixed height */
+    padding: 10px 15px; /* Add padding for uniformity */
+    font-size: 16px; /* Adjust font size as needed */
+    background-color: #24976f; /* Color for suggestions */
+    color: #fcfcfc; /* Light text color */
+    border: none;
+    border-radius: var(--border-rad-lg);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px; /* Add margin for spacing between buttons */
+    vertical-align: middle;
+    max-width: 40%; /* Set the maximum width */
+
+}
+
+.taxon-button {
+    height: 50px; /* Set a fixed height */
+    font-size: 16px; /* Adjust font size as needed */
+    background-color: #FFFF33; /* Color for suggestions */
+    color: #fcfcfc; /* Light text color */
+    border: none;
+    border-radius: var(--border-rad-lg);
+    padding: 0.8em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ;
+    margin: 0 0.5em; /* Add margin for spacing between buttons */
+    vertical-align: middle;
+    font-weight: bold; /* Make text bold */
+    padding: 10px; /* Match padding */
+
+}
+
+/* Ensure the image inside the taxon button (glob) is vertically centered */
+.taxon-button img {
+    display: block;
+    height: 25px;
+    width: 25px;
+}
+
+
+
+
+.suggestion-btn:hover {
+    background-color: #1e7b5f; /* Darker shade on hover */
+}
+
+/* Hover effect for taxon button */
+.taxon-button:hover {
+    background-color: #DAB520; /* Dark yellow color (Goldenrod) */
+}
+
+
+
+.suggestion-btn.disabled {
+    background-color: #ccc; /* Gray background for disabled state */
+    color: #666; /* Darker text color */
+    cursor: not-allowed; /* Change cursor to indicate it's disabled */
+}
+
+
+.typing-indicator {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center the items vertically */
+}
+
+.dot {
+    animation: blink 1s infinite; /* Apply animation to each dot */
+    opacity: 1; /* Start with the dots visible */
+    margin-left: 2px; /* Optional: add space between dots */
+}
+
+/* Animate all dots to blink together */
+.dot:nth-child(1) {
+    animation-delay: 0s; /* No delay for the first dot */
+}
+.dot:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for the second dot */
+}
+.dot:nth-child(3) {
+    animation-delay: 0.4s; /* Delay for the third dot */
+}
+
+@keyframes blink {
+    0%, 20% {
+        opacity: 0; /* Start as invisible */
+    }
+    50% {
+        opacity: 1; /* Become visible */
+    }
+    100% {
+        opacity: 0; /* Return to invisible */
+    }
+}
+
+
+/* Density URL Container */
+#density-url {
+    display: none; /* Initially hidden */
+    padding: 15px; /* Added padding for better spacing */
+    background-color: rgba(0, 105, 148, 0.9); /* Deep ocean blue with transparency */
+    color: var(--light-text); /* Very light blue, like ocean foam */
+    border: 2px solid var(--medium-light-text); /* Soft ocean blue border */
+    border-radius: var(--border-rad-lg); /* Use the same border radius as other elements */
+    margin-top: 20px; /* Space from the map */
+    width: 100%; /* Full width of the parent container */
+    max-width: 1200px; /* Set maximum width for consistency */
+    font-family: 'Grass', sans-serif; /* Grass font for the URL */
+    font-size: 14px; /* Font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    white-space: normal; 
+}
+
+/* Header inside the density URL */
+#density-url h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Slightly larger font for heading */
+    text-decoration: underline; /* Underlined heading */
+}
+
+/* Paragraph styling inside the density URL */
+#density-url p {
+    margin: 5px 0; /* Add some margin for spacing between paragraphs */
+    color: var(--medium-light-text); /* Soft ocean blue for the text */
+}
+
+/* Optional styles for links inside density-url */
+#density-url a {
+    color: #fcfcfc; /* Light text color for links */
+    text-decoration: underline; /* Underlined for emphasis */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+#density-url a:hover {
+    color: #d4f3ff; /* Lighter shade on hover for links */
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whaly</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/fish-logo.png">
+    <!-- OpenLayers CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" type="text/css">
+    
+    <!-- OpenLayers JS -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <!-- Flexbox container for chatbot and map -->
+        <div class="wrapper">
+            <section class="chatbot-container">
+                <div class="chatbot-header">
+                    <img src="images/fish-logo.png" class="logo" alt="Whaly Logo">
+                    <h1>Whaly</h1>
+                    <h2>Ask me anything about fish!</h2>
+                    <p class="supportId"></p>
+                </div>
+                <div class="chatbot-conversation-container" id="chatbot-conversation">
+                    <div class="speech speech-ai">
+                        How can I help you?
+                    </div>
+                </div>
+
+               <div id="typing-indicator" class="typing-indicator" style="display: none;">
+                  Whaly is typing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+                </div>
+
+                <!-- Suggestions for next question (to be added dynamically) -->
+                <div id="suggestions-container" class="suggestions-container" style="display: none;">
+                    <button class="suggestion-btn">Suggestion 1</button>
+                    <button class="suggestion-btn">Suggestion 2</button>
+                    <button class="taxon-button">
+                        <img src="glob.png" alt="Glob Icon"> Taxon
+                    </button>
+                </div>
+
+                <!-- Form for user input -->
+                <form id="form" class="chatbot-input-container"  autocomplete="off">
+                    <input name="user-input" type="text" id="user-input" required placeholder="Type your question here...">
+                    <button id="submit-btn" class="submit-btn" type="submit">
+                        <img src="images/send-btn-icon.png" class="send-btn-icon" alt="Send Button">
+                    </button>
+                </form>
+            </section>
+
+            <div class="map-density-container">
+            <div id="map" class="map-container"></div>
+            <div id="density-url">
+                <h3>Density URL</h3>
+                <p>Your density URL will be displayed here.</p>
+                <a href="#">Link to more information</a>
+            </div> <!-- Density URL section -->
+        </div>
+        
+       
+      
+        </div>
+    </main>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
+
