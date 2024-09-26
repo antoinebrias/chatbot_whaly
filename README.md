@@ -8,7 +8,7 @@ This web application is designed to provide information about fish species and t
 
 - **Conversational Interface**: Ask questions about fish and receive informative responses. 💬
 - **Taxon Identification**: The chatbot identifies and provides information on specific fish taxa. 🦈
-- **Distribution Mapping**: Generates maps showing the distribution of fish species based on user queries. 🗺️
+- **Distribution Mapping**: Generates maps showing the distribution of fish species based on user queries using GBIF API. 🗺️
 - **Follow-Up Suggestions**: Offers suggestions for continuing the conversation based on user input. 🔄
 - **Adaptable**: Can be customized to provide information on other animals or data if specified. 🦋🐾
 
@@ -36,7 +36,7 @@ To set up this project locally, follow these steps:
 
 ## Usage
 
-Once the chatbot is running, you can interact with it by typing questions related to fish species. The chatbot will respond with information, keywords, and follow-up questions. You can also view distribution maps or time series related to the fish species you inquire about. 📈
+Once the chatbot is running, you can interact with it by typing questions related to fish species. The chatbot will respond with information, keywords, and follow-up questions. You can also view distribution maps or time series related to the fish species you inquire about. 
 
 ## Example Interaction
 
@@ -52,7 +52,7 @@ This chatbot can be adapted to provide information about other animals or datase
 
 ## Video Illustration
 
-https://github.com/user-attachments/assets/92856254-4712-4e74-af4a-0e8e7f6f101e 🎥
+https://github.com/user-attachments/assets/d4c79c50-54de-446d-9e95-89bad5386679
 
 ## Contributing
 
@@ -65,3 +65,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Acknowledgements
 
 - gbif.org for taxon information. 🌿
+- https://www.freecodecamp.org/news/build-gpt-4-api-chatbot-turorial/#heading-the-flow-of-this-app was a good starting base.
