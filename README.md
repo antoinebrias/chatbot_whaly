@@ -18,8 +18,8 @@ To set up this project locally, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/fish-chatbot.git
-   cd fish-chatbot
+   git clone https://github.com/antoinebrias/chatbot_whaly.git
+   cd chatbot_whaly
    ```
 2. **Install Dependencies**: Ensure you have Node.js installed, then run:
    ```bash
