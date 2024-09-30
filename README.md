@@ -30,7 +30,7 @@ To set up this project locally, follow these steps:
    
 4. **Run the server**:
    ```bash
-   npm run
+   npm start
    ```   
 5. **Open the Application**: Navigate to http://localhost:5174 in your browser to view the chatbot in action! 
 
